@@ -14,7 +14,7 @@ public:
     std::cout << "Running the job with name "
               << name
               << " and priority "
-              << priority;
+              << priority << std::endl;
   }
 
   std::string getName()
@@ -26,4 +26,8 @@ public:
   {
     return priority;
   }
-}
+  bool operator<(const Job& other) const
+    {
+        return priority < other.priority;
+    }
+};
